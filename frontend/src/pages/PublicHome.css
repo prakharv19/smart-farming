@@ -1,0 +1,172 @@
+/* ------------------ GENERAL BODY ------------------ */
+.public-home {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f5f5f5;
+  padding: 0;
+  margin: 0;
+}
+
+/* ------------------ HERO SECTION ------------------ */
+.hero {
+  background: url('https://images.unsplash.com/photo-1581092795364-7bba0a12c8f4?auto=format&fit=crop&w=1470&q=80') center/cover no-repeat;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  background-color: #27ae60;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  color: #2c3e50;
+  
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.btn {
+  background-color: rgb(39, 51, 223);
+  color: black;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: #45a049;
+}
+
+.login-btn {
+  font-size: 1rem;
+}
+
+/* ------------------ EXPLORE SECTION ------------------ */
+.explore-section {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 50px 20px;
+  flex-wrap: wrap;
+}
+
+.explore-card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  width: 300px;
+  box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.explore-card:hover {
+  transform: translateY(-5px);
+}
+
+.explore-card img {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 15px;
+}
+
+/* ------------------ SECTION GRID ------------------ */
+.section-grid {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+/* ------------------ SEARCH BAR ------------------ */
+.search-bar {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px 15px;
+  margin: 20px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+/* ------------------ GRID & CARD ------------------ */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.card {
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card h3 {
+  margin: 15px 0 10px;
+}
+
+.card p {
+  padding: 0 15px 15px;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* ------------------ BLOGS GRID (3 per row) ------------------ */
+.blogs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 30px;
+}
+
+/* Responsive adjustments for blogs grid */
+@media screen and (max-width: 1024px) {
+  .blogs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .blogs-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ------------------ BACK BUTTON ------------------ */
+.back-btn {
+  margin-top: 30px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  background-color: #f44336;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.back-btn:hover {
+  background-color: #d32f2f;
+}

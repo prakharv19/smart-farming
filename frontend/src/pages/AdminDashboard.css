@@ -1,0 +1,239 @@
+/* ---------- General ---------- */
+.admin-dashboard {
+  font-family: "Poppins", sans-serif;
+  background-color: #f4f7fa;
+  min-height: 100vh;
+  color: #333;
+}
+
+/* ---------- Top Bar ---------- */
+.admin-topbar {
+  background-color: #0cf364;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 12px 20px;
+  box-shadow: 0 2px 5px rgba(202, 40, 40, 0.1);
+}
+
+.admin-topbar h2 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.nav-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 8px 0;
+}
+
+.nav-buttons button {
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.nav-buttons button:hover,
+.nav-buttons button:focus {
+  background-color: #fff;
+  color: #3c5f1f;
+}
+
+.logout {
+  background-color: #e74c3c;
+  color: #fff;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.logout:hover {
+  background-color: #c0392b;
+}
+
+/* ---------- Content ---------- */
+.admin-content {
+  padding: 20px 30px;
+  overflow-x: auto;
+}
+
+/* ---------- Tables ---------- */
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.05);
+}
+
+.admin-table th,
+.admin-table td {
+  border: 1px solid #e0e0e0;
+  padding: 10px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.admin-table th {
+  background-color: #1f4f5f;
+  color: #fff;
+  font-weight: 500;
+}
+
+.table-image {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+/* ---------- Cards (blogs & complaints) ---------- */
+.blog-card {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px;
+  display: flex;
+  gap: 15px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+}
+
+.blog-image {
+  width: 120px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.blog-content {
+  flex: 1;
+}
+
+.blog-content h3 {
+  margin-top: 0;
+  font-size: 16px;
+}
+
+.content {
+  margin: 6px 0;
+  color: #555;
+}
+
+/* ---------- Action Buttons ---------- */
+.action-buttons {
+  margin-top: 10px;
+}
+
+button.approve {
+  background-color: #27ae60;
+}
+
+button.reject {
+  background-color: #f39c12;
+}
+
+button.delete {
+  background-color: #e74c3c;
+}
+
+button.approve,
+button.reject,
+button.delete {
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  margin-right: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+button.approve:hover {
+  background-color: #1e8449;
+}
+
+button.reject:hover {
+  background-color: #d68910;
+}
+
+button.delete:hover {
+  background-color: #c0392b;
+}
+
+/* ---------- Filters ---------- */
+.filter-bar {
+  margin-bottom: 15px;
+}
+
+.filter-bar select {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+/* ---------- Profile Tab (Centered & Smaller Inputs) ---------- */
+.tab-content {
+  max-width: 500px; /* slightly smaller container */
+  background-color: #fff;
+  padding: 20px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* slightly less gap */
+}
+
+.tab-content h2,
+.tab-content h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  color: #1f4f5f;
+  text-align: center;
+}
+
+.tab-content label {
+  font-weight: 500;
+  font-size: 13px; /* smaller font */
+}
+
+.tab-content input {
+  width: 90%;
+  padding: 6px 10px; /* smaller padding */
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 13px; /* slightly smaller font */
+}
+
+.tab-content input:disabled {
+  background-color: #f0f0f0;
+}
+
+.tab-content button {
+  margin-top: 12px;
+  align-self: center;
+  background-color: #1f4f5f;
+  color: #fff;
+  padding: 7px 12px; /* smaller button */
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.tab-content button:hover {
+  background-color: #163d47;
+}

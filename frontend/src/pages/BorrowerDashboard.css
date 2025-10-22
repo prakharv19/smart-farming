@@ -1,0 +1,365 @@
+/* ---------- General Container ---------- */
+.dashboard-container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  font-family: "Poppins", sans-serif;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
+
+/* ---------- Top Buttons ---------- */
+.top-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.top-buttons button {
+  background-color: #2e7d32;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.top-buttons button:hover {
+  background-color: #256628;
+}
+
+/* ---------- Page Titles ---------- */
+h2 {
+  text-align: center;
+  color: #2e7d32;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+/* ---------- Tabs ---------- */
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+}
+
+.tabs button {
+  background-color: #e8f5e9;
+  border: 2px solid #2e7d32;
+  border-radius: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  color: #2e7d32;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.tabs button.active {
+  background-color: #2e7d32;
+  color: white;
+}
+
+.tabs button:hover {
+  background-color: #43a047;
+  color: white;
+}
+
+/* ---------- Tab Content ---------- */
+.tab-content {
+  background-color: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30px;
+}
+
+/* ---------- Equipment Section ---------- */
+/* ---------- Equipment Section ---------- */
+.equipment-list input {
+  width: 48%;
+  padding: 8px 10px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.equipment-card-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 per row */
+  gap: 20px;
+}
+
+/* Responsive for tablets */
+@media (max-width: 1024px) {
+  .equipment-card-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 per row */
+  }
+}
+
+/* Responsive for mobile */
+@media (max-width: 768px) {
+  .equipment-card-container {
+    grid-template-columns: 1fr; /* 1 per row */
+  }
+}
+
+.equipment-card {
+  background-color: #f1f8e9;
+  border-radius: 10px;
+  padding: 15px;
+  border: 1px solid #c5e1a5;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.equipment-card:hover {
+  transform: scale(1.02);
+}
+
+.equipment-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.equipment-card button {
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* Requests Section */
+.requests-list {
+  margin-top: 15px;
+}
+
+.request-card-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 per row */
+  gap: 20px;
+}
+
+.request-card {
+  background-color: #f9fbe7;
+  border: 1px solid #dcedc8;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+}
+
+.request-card h4 {
+  color: #1b5e20;
+  margin-bottom: 10px;
+}
+
+.request-card p {
+  margin: 5px 0;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .request-card-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .request-card-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ---------- Profile Section ---------- */
+.profile-section {
+  max-width: 600px; /* Limit the width */
+  margin: 0 auto 30px auto; /* Center it and add bottom spacing */
+  background-color: #f1f8e9;
+  padding: 20px 25px;
+  border-radius: 12px;
+  border: 1px solid #c5e1a5;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+}
+
+.profile-section h3 {
+  text-align: center;
+  color: #2e7d32;
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+
+.profile-section label {
+  font-weight: 500;
+  display: block;
+  margin-top: 12px;
+  margin-bottom: 5px;
+  color: #2e7d32;
+}
+
+.profile-section input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.profile-section button {
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+  background-color: #2e7d32;
+  color: white;
+  padding: 12px 0;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.profile-section button:hover {
+  background-color: #256628;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .profile-section {
+    width: 90%;
+    padding: 15px;
+  }
+}
+
+
+/* ---------- Complaint Section ---------- */
+.complaint-section {
+  max-width: 1000px; /* Limit width for better layout */
+  margin: 0 auto 30px auto;
+  padding: 20px;
+}
+
+.complaint-section h3 {
+  color: #2e7d32;
+  margin-bottom: 15px;
+  font-size: 22px;
+  text-align: center;
+}
+
+.complaint-section .complaint-form {
+  background-color: #f1f8e9;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #c5e1a5;
+  margin-bottom: 30px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+}
+
+.complaint-section .complaint-form input,
+.complaint-section .complaint-form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.complaint-section .complaint-form button {
+  display: block;
+  width: 100%;
+  padding: 12px 0;
+  background-color: #2e7d32;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.complaint-section .complaint-form button:hover {
+  background-color: #1b5e20;
+}
+
+/* Complaint List Grid */
+.complaint-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 complaints per row */
+  gap: 20px;
+}
+
+.complaint-card {
+  background-color: #fffde7;
+  border: 1px solid #fff59d;
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.06);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.complaint-card h4 {
+  margin-bottom: 8px;
+  color: #2e7d32;
+}
+
+.complaint-card p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #333;
+}
+
+.complaint-card img {
+  width: 100%;
+  max-height: 150px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin: 10px 0;
+}
+
+.complaint-card small {
+  color: #555;
+  margin-top: 5px;
+}
+
+/* Complaint status borders */
+.complaint-card.pending { border-left: 5px solid orange; }
+.complaint-card.resolved { border-left: 5px solid green; }
+.complaint-card.rejected { border-left: 5px solid red; }
+
+/* Delete button inside complaint card */
+.complaint-card .delete-btn {
+  margin-top: 12px;
+  padding: 6px 12px;
+  background-color: #c62828;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.complaint-card .delete-btn:hover {
+  background-color: #8e0000;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .complaint-list {
+    grid-template-columns: 1fr; /* stack for tablets/mobiles */
+  }
+}
