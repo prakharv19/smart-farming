@@ -33,7 +33,7 @@ const AdminDashboard = () => {
   // ===== Profile functions =====
   const fetchProfile = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/admin/profile", { headers });
+      const res = await axios.get("https://smart-farming-backend-2cxi.onrender.com/api/admin/profile", { headers });
       setProfile({ ...res.data, currentPassword: "", newPassword: "", confirmNewPassword: "" });
       setAdminName(res.data.fullName);
     } catch {
@@ -51,7 +51,7 @@ const AdminDashboard = () => {
       return;
     }
     try {
-      await axios.put("http://localhost:5000/api/admin/profile", profile, { headers });
+      await axios.put("https://smart-farming-backend-2cxi.onrender.com/api/admin/profile", profile, { headers });
       alert("Profile updated successfully");
       fetchProfile();
       setAdminName(profile.fullName);
@@ -63,7 +63,7 @@ const AdminDashboard = () => {
   // ===== Fetch functions =====
   const fetchBlogs = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/admin/blogs", { headers });
+      const res = await axios.get("https://smart-farming-backend-2cxi.onrender.com/api/admin/blogs", { headers });
       setBlogs(res.data);
     } catch {
       alert("Failed to fetch blogs");
@@ -72,7 +72,7 @@ const AdminDashboard = () => {
 
   const fetchComplaints = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/admin/complaints", { headers });
+      const res = await axios.get("https://smart-farming-backend-2cxi.onrender.com/api/admin/complaints", { headers });
       setComplaints(res.data);
     } catch {
       alert("Failed to fetch complaints");
@@ -81,7 +81,7 @@ const AdminDashboard = () => {
 
   const fetchUsers = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/admin/users", { headers });
+      const res = await axios.get("https://smart-farming-backend-2cxi.onrender.com/api/admin/users", { headers });
       setUsers(res.data);
     } catch {
       alert("Failed to fetch users");
@@ -90,7 +90,7 @@ const AdminDashboard = () => {
 
   const fetchEquipment = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/admin/equipments", { headers });
+      const res = await axios.get("https://smart-farming-backend-2cxi.onrender.com/api/admin/equipments", { headers });
       setEquipment(res.data);
     } catch {
       alert("Failed to fetch equipment");
@@ -99,7 +99,7 @@ const AdminDashboard = () => {
 
   const fetchBorrowRequests = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/admin/borrow-requests", { headers });
+      const res = await axios.get("https://smart-farming-backend-2cxi.onrender.com/api/admin/borrow-requests", { headers });
       setBorrowRequests(res.data);
     } catch {
       alert("Failed to fetch borrow requests");
@@ -118,7 +118,7 @@ const AdminDashboard = () => {
   // ===== Blog actions =====
   const approveBlog = async (id) => {
     try {
-      await axios.put(`http://localhost:5000/api/admin/blog/${id}/approve`, { comment: "Approved by admin" }, { headers });
+      await axios.put(`https://smart-farming-backend-2cxi.onrender.com/api/admin/blog/${id}/approve`, { comment: "Approved by admin" }, { headers });
       fetchBlogs();
     } catch {
       alert("Failed to approve blog");
@@ -128,7 +128,7 @@ const AdminDashboard = () => {
   const rejectBlog = async (id) => {
     const comment = prompt("Reason for rejection:") || "Rejected by admin";
     try {
-      await axios.put(`http://localhost:5000/api/admin/blog/${id}/reject`, { comment }, { headers });
+      await axios.put(`https://smart-farming-backend-2cxi.onrender.com/api/admin/blog/${id}/reject`, { comment }, { headers });
       fetchBlogs();
     } catch {
       alert("Failed to reject blog");
@@ -138,7 +138,7 @@ const AdminDashboard = () => {
   const deleteBlog = async (id) => {
     if (!window.confirm("Delete this blog?")) return;
     try {
-      await axios.delete(`http://localhost:5000/api/admin/blog/${id}`, { headers });
+      await axios.delete(`https://smart-farming-backend-2cxi.onrender.com/api/admin/blog/${id}`, { headers });
       fetchBlogs();
     } catch {
       alert("Failed to delete blog");
@@ -149,7 +149,7 @@ const AdminDashboard = () => {
   const updateComplaintStatus = async (id, status) => {
     const adminComment = prompt(`Enter ${status} comment:`) || "";
     try {
-      await axios.put(`http://localhost:5000/api/admin/complaints/${id}`, { status, adminComment }, { headers });
+      await axios.put(`https://smart-farming-backend-2cxi.onrender.com/api/admin/complaints/${id}`, { status, adminComment }, { headers });
       fetchComplaints();
     } catch {
       alert("Failed to update complaint");
@@ -159,7 +159,7 @@ const AdminDashboard = () => {
   const deleteComplaint = async (id) => {
     if (!window.confirm("Delete this complaint?")) return;
     try {
-      await axios.delete(`http://localhost:5000/api/admin/complaints/${id}`, { headers });
+      await axios.delete(`https://smart-farming-backend-2cxi.onrender.com/api/admin/complaints/${id}`, { headers });
       fetchComplaints();
     } catch {
       alert("Failed to delete complaint");
@@ -170,7 +170,7 @@ const AdminDashboard = () => {
   const deleteUser = async (id) => {
     if (!window.confirm("Delete this user?")) return;
     try {
-      await axios.delete(`http://localhost:5000/api/admin/users/${id}`, { headers });
+      await axios.delete(`https://smart-farming-backend-2cxi.onrender.com/api/admin/users/${id}`, { headers });
       fetchUsers();
     } catch {
       alert("Failed to delete user");
@@ -181,7 +181,7 @@ const AdminDashboard = () => {
   const deleteEquipment = async (id) => {
     if (!window.confirm("Delete this equipment?")) return;
     try {
-      await axios.delete(`http://localhost:5000/api/admin/equipments/${id}`, { headers });
+      await axios.delete(`https://smart-farming-backend-2cxi.onrender.com/api/admin/equipments/${id}`, { headers });
       fetchEquipment();
     } catch {
       alert("Failed to delete equipment");
@@ -192,7 +192,7 @@ const AdminDashboard = () => {
   const updateBorrowRequestStatus = async (id, status) => {
     const adminComment = prompt(`Enter comment for ${status}:`) || "";
     try {
-      await axios.put(`http://localhost:5000/api/admin/borrow-requests/${id}`, { status, adminComment }, { headers });
+      await axios.put(`https://smart-farming-backend-2cxi.onrender.com/api/admin/borrow-requests/${id}`, { status, adminComment }, { headers });
       fetchBorrowRequests();
     } catch {
       alert("Failed to update borrow request status");
@@ -202,7 +202,7 @@ const AdminDashboard = () => {
   const deleteBorrowRequest = async (id) => {
     if (!window.confirm("Delete this borrow request?")) return;
     try {
-      await axios.delete(`http://localhost:5000/api/admin/borrow-requests/${id}`, { headers });
+      await axios.delete(`https://smart-farming-backend-2cxi.onrender.com/api/admin/borrow-requests/${id}`, { headers });
       fetchBorrowRequests();
     } catch {
       alert("Failed to delete borrow request");
