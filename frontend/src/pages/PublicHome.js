@@ -13,13 +13,13 @@ const PublicHome = () => {
   useEffect(() => {
     const fetchEquipment = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/public/equipment");
+        const res = await axios.get("https://smart-farming-backend-2cxi.onrender.com/api/public/equipment");
         setEquipment(res.data);
       } catch (err) { console.error(err); }
     };
     const fetchBlogs = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/public/blogs");
+        const res = await axios.get("https://smart-farming-backend-2cxi.onrender.com/api/public/blogs");
         setBlogs(res.data);
       } catch (err) { console.error(err); }
     };
