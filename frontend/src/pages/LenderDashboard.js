@@ -29,7 +29,7 @@ const LenderDashboard = () => {
   // ---------- FETCH FUNCTIONS ----------
   const fetchEquipment = useCallback(async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/equipment/my-equipment', {
+      const res = await axios.get('https://smart-farming-backend-2cxi.onrender.com/api/equipment/my-equipment', {
         headers: { Authorization: `Bearer ${token}` },
       });
       setEquipmentList(res.data);
@@ -41,7 +41,7 @@ const LenderDashboard = () => {
 
   const fetchRequests = useCallback(async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/borrow/incoming', {
+      const res = await axios.get('https://smart-farming-backend-2cxi.onrender.com/api/borrow/incoming', {
         headers: { Authorization: `Bearer ${token}` },
       });
       setRequests(res.data);
@@ -53,7 +53,7 @@ const LenderDashboard = () => {
 
   const fetchProfile = useCallback(async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/auth/me', {
+      const res = await axios.get('https://smart-farming-backend-2cxi.onrender.com/api/auth/me', {
         headers: { Authorization: `Bearer ${token}` },
       });
       setProfile(res.data);
@@ -65,7 +65,7 @@ const LenderDashboard = () => {
 
   const fetchMyComplaints = useCallback(async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/complaints/my-complaints', {
+      const res = await axios.get('https://smart-farming-backend-2cxi.onrender.com/api/complaints/my-complaints', {
         headers: { Authorization: `Bearer ${token}` },
       });
       setMyComplaints(res.data);
@@ -99,12 +99,12 @@ const LenderDashboard = () => {
       };
 
       if (editEquipment._id) {
-        await axios.put(`http://localhost:5000/api/equipment/${editEquipment._id}`, payload, {
+        await axios.put(`https://smart-farming-backend-2cxi.onrender.com/api/equipment/${editEquipment._id}`, payload, {
           headers: { Authorization: `Bearer ${token}` },
         });
         alert('Equipment updated successfully!');
       } else {
-        await axios.post('http://localhost:5000/api/equipment', payload, {
+        await axios.post('https://smart-farming-backend-2cxi.onrender.com/api/equipment', payload, {
           headers: { Authorization: `Bearer ${token}` },
         });
         alert('Equipment added successfully!');
@@ -121,7 +121,7 @@ const LenderDashboard = () => {
   const deleteEquipment = async (id) => {
     if (!window.confirm('Are you sure you want to delete this equipment?')) return;
     try {
-      await axios.delete(`http://localhost:5000/api/equipment/${id}`, {
+      await axios.delete(`https://smart-farming-backend-2cxi.onrender.com/api/equipment/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       alert('Equipment deleted successfully!');
@@ -136,7 +136,7 @@ const LenderDashboard = () => {
   const handleRequestAction = async (id, status) => {
     try {
       await axios.put(
-        `http://localhost:5000/api/borrow/${id}`,
+        `https://smart-farming-backend-2cxi.onrender.com/api/borrow/${id}`,
         { status },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -177,7 +177,7 @@ const LenderDashboard = () => {
         payload.newPassword = profile.newPassword;
       }
 
-      await axios.put('http://localhost:5000/api/auth/me', payload, {
+      await axios.put('https://smart-farming-backend-2cxi.onrender.com/api/auth/me', payload, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -199,7 +199,7 @@ const LenderDashboard = () => {
     if (!complaintTitle || !complaintMessage) return alert('Enter title and message');
     try {
       await axios.post(
-        'http://localhost:5000/api/complaints',
+        'https://smart-farming-backend-2cxi.onrender.com/api/complaints',
         { title: complaintTitle, message: complaintMessage, image: complaintImage },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -217,7 +217,7 @@ const LenderDashboard = () => {
   const deleteComplaint = async (id) => {
     if (!window.confirm('Are you sure you want to delete this complaint?')) return;
     try {
-      await axios.delete(`http://localhost:5000/api/complaints/cancel/${id}`, {
+      await axios.delete(`https://smart-farming-backend-2cxi.onrender.com/api/complaints/cancel/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       alert('Complaint deleted successfully!');
