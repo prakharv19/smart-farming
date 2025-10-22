@@ -66,7 +66,7 @@ const Register = () => {
     delete sendData.countryCode; // already added to phone
 
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/register', sendData);
+      const res = await axios.post('https://smart-farming-backend-2cxi.onrender.com/api/auth/register', sendData);
       alert(res.data.message);
     } catch (err) {
       alert(err.response?.data?.message || "Registration failed");
