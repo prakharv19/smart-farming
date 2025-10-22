@@ -9,7 +9,7 @@ const PublicBlogs = () => {
 
   const fetchBlogs = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/public/blogs"); // only approved blogs
+      const res = await axios.get("https://smart-farming-backend-2cxi.onrender.com/api/public/blogs"); // only approved blogs
       setBlogs(res.data);
     } catch (err) {
       console.error(err);
