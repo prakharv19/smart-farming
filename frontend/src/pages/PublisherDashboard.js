@@ -42,7 +42,7 @@ const PublisherDashboard = () => {
   // ====================== FETCH BLOGS ======================
   const fetchBlogs = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/publisher/my-blogs", {
+      const res = await axios.get("https://smart-farming-backend-2cxi.onrender.com/api/publisher/my-blogs", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setBlogs(res.data);
@@ -55,7 +55,7 @@ const PublisherDashboard = () => {
   // ====================== FETCH PROFILE ======================
   const fetchProfile = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/publisher/profile", {
+      const res = await axios.get("https://smart-farming-backend-2cxi.onrender.com/api/publisher/profile", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setProfile({
@@ -77,7 +77,7 @@ const PublisherDashboard = () => {
   // ====================== FETCH USER COMPLAINTS ======================
   const fetchMyComplaints = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/complaints/my-complaints", {
+      const res = await axios.get("https://smart-farming-backend-2cxi.onrender.com/api/complaints/my-complaints", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setMyComplaints(res.data);
@@ -98,12 +98,12 @@ const PublisherDashboard = () => {
     e.preventDefault();
     try {
       if (editingId) {
-        await axios.put(`http://localhost:5000/api/publisher/${editingId}`, form, {
+        await axios.put(`https://smart-farming-backend-2cxi.onrender.com/api/publisher/${editingId}`, form, {
           headers: { Authorization: `Bearer ${token}` },
         });
         setEditingId(null);
       } else {
-        await axios.post("http://localhost:5000/api/publisher", form, {
+        await axios.post("https://smart-farming-backend-2cxi.onrender.com/api/publisher", form, {
           headers: { Authorization: `Bearer ${token}` },
         });
       }
@@ -129,7 +129,7 @@ const PublisherDashboard = () => {
 
   const handleSubmitForApproval = async (id) => {
     try {
-      await axios.post(`http://localhost:5000/api/publisher/${id}/submit`, {}, {
+      await axios.post(`https://smart-farming-backend-2cxi.onrender.com/api/publisher/${id}/submit`, {}, {
         headers: { Authorization: `Bearer ${token}` },
       });
       alert("✅ Submitted for approval");
@@ -143,7 +143,7 @@ const PublisherDashboard = () => {
   const handleDeleteBlog = async (id) => {
     if (!window.confirm("Are you sure you want to delete this blog?")) return;
     try {
-      await axios.delete(`http://localhost:5000/api/publisher/${id}`, {
+      await axios.delete(`https://smart-farming-backend-2cxi.onrender.com/api/publisher/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       fetchBlogs();
@@ -159,7 +159,7 @@ const PublisherDashboard = () => {
     if (!complaintTitle || !complaintMessage) return alert("Title and message are required");
     try {
       await axios.post(
-        "http://localhost:5000/api/complaints",
+        "https://smart-farming-backend-2cxi.onrender.com/api/complaints",
         { title: complaintTitle, message: complaintMessage, image: complaintImage },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -177,7 +177,7 @@ const PublisherDashboard = () => {
   const handleDeleteComplaint = async (id) => {
     if (!window.confirm("Are you sure you want to delete this complaint?")) return;
     try {
-      await axios.delete(`http://localhost:5000/api/complaints/cancel/${id}`, {
+      await axios.delete(`https://smart-farming-backend-2cxi.onrender.com/api/complaints/cancel/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       alert("✅ Complaint deleted successfully");
@@ -201,7 +201,7 @@ const PublisherDashboard = () => {
           if (profile[key]) payload[key] = profile[key];
         }
       );
-      await axios.put("http://localhost:5000/api/publisher/profile", payload, {
+      await axios.put("https://smart-farming-backend-2cxi.onrender.com/api/publisher/profile", payload, {
         headers: { Authorization: `Bearer ${token}` },
       });
       alert("✅ Profile updated successfully");
