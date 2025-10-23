@@ -1,6 +1,7 @@
 // frontend/src/pages/AdminDashboard.js
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { useNavigate } from 'react-router-dom';
 import "./AdminDashboard.css";
 
 const AdminDashboard = () => {
@@ -18,6 +19,8 @@ const AdminDashboard = () => {
   const [blogFilter, setBlogFilter] = useState("All");
   const [complaintFilter, setComplaintFilter] = useState("All");
   const [borrowFilter, setBorrowFilter] = useState("All");
+
+  const navigate = useNavigate();
 
   // ===== Profile =====
   const [profile, setProfile] = useState({
