@@ -212,7 +212,9 @@ const AdminDashboard = () => {
   const logout = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("fullName");
-    window.location.href = "https://smart-farming-frontend.onrender.com/login";
+    // window.location.href = "https://smart-farming-frontend.onrender.com/login";
+    // localStorage.removeItem('token');
+    navigate('/login');
   };
 
   // ===== Filtered data =====
