@@ -212,7 +212,7 @@ const AdminDashboard = () => {
   const logout = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("fullName");
-    window.location.href = "/login";
+    window.location.href = "https://smart-farming-frontend.onrender.com/login";
   };
 
   // ===== Filtered data =====
